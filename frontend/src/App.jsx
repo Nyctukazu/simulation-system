@@ -1,42 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import GameDashboard from './pages/GameDashboard';
+import AdminAddGame from './pages/AdminAddGame';
+import GameDetailPage from './pages/GameDetailPage';
+
+import FibonacciChecker from './pages/FibonacciChecker';
+import JackEnPoy from './pages/JackEnPoy';
+import Multiplication from './pages/Multiplication';
+import FactorialCalculator from './pages/FactorialCalculator';
+import PasswordValidation from './pages/PasswordValidation';
+
+
 
 function App() {
-  const [games, setGames] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    axios.get('http://localhost:8080/api/games')
-    .then(response => {
-      setGames(response.data);
-      setLoading(false);
-    })
-    .catch(err => {
-      console.error("Error connecting to Spring Boot", err);
-      setError("Could not connect to the backend server.");
-      setLoading(false);
-    });
-  }, []);
-
+ 
   return (
-    <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif' }}>
-      <h1> My Game System Dash</h1>
-      <hr />
+     <Router>
+      <nav style={{ padding: '20px 40px', background: '#222', color: 'white', display: 'flex', gap: '20px' }}>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}>🎮 User Dashboard</Link>
+        <Link to="/admin/add-game" style={{ color: '#ffc107', textDecoration: 'none', fontWeight: 'bold' }}>🔒 Admin Portal</Link>
+      </nav>
 
-      {loading && <p>Connecting to Spring Boot backend API...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto' }}>
+        <Routes>
+          <Route path="/" element={<GameDashboard />} />
+          <Route path="/admin/add-game" element={<AdminAddGame />} />
+          <Route path="/games/:id" element={<GameDetailPage />} />
 
-      {!loading && !error && (
-        <div>
-          <h3>Data received successfully:</h3>
-          {/* This prints your backend data cleanly on the screen */}
-          <pre style={{ background: '#f4f4f4', padding: '15px', borderRadius: '5px' }}>
-            {JSON.stringify(games, null, 2)}
-          </pre>
-        </div>
-      )}
-    </div>
+          <Route path="/simulator/fibonacci" element={<FibonacciChecker />} />
+          <Route path="/simulator/jack-en-poy" element={<JackEnPoy />} />
+          <Route path="/simulator/factorial" element={<FactorialCalculator />} />
+          <Route path="/simulator/multiplication" element={<Multiplication />} />
+          <Route path="/simulator/password-validation" element={<PasswordValidation />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
