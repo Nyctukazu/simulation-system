@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <div th:fragment="appSidebar" class="sidebar">
+        <div class="sidebar-brand">
+            <span class="brand-icon">🎮</span>
+            <h3>DIT Simulators</h3>
+        </div>
+        
+        <nav class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/dashboard" class="menu-item active">
+                        <span class="icon">🏠</span> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/fibonacci" class="menu-item">
+                        <span class="icon">🔢</span> Fibonacci Finder
+                    </a>
+                </li>
+                <li>
+                    <a href="/jack-en-poy" class="menu-item">
+                        <span class="icon">✊</span> Jack En Poy
+                    </a>
+                </li>
+                <li>
+                    <a href="/factorial" class="menu-item">
+                        <span class="icon">❗</span> Factorial Engine
+                    </a>
+                </li>
+                <li>
+                    <a href="/multiplication" class="menu-item">
+                        <span class="icon">✖️</span> Multiplication Matrix
+                    </a>
+                </li>
+                <li>
+                    <a href="/password" class="menu-item">
+                        <span class="icon">🔒</span> Password Validator
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <p>Section: <strong>DIT</strong></p>
+        </div>
+    </div>
+
+</body>
+</html>
