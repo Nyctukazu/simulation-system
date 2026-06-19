@@ -2,10 +2,10 @@ package edu.dit.simulatorsystem.service;
 
 import java.lang.Math;
 
-import edu.dit.simulatorsystem.service.utilities.FibonacciVerifiable;
 import edu.dit.simulatorsystem.service.utilities.MultiplyEngine;
+import edu.dit.simulatorsystem.service.utilities.FibonacciVerifiable;
 
-public class FibonacciService implements FibonacciVerifiable{
+public class FibonacciServiceImpl implements FibonacciVerifiable{
      
     private final MultiplyEngine multiply = new MultiplyEngine();
 

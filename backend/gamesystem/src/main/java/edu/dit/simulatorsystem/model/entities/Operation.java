@@ -5,6 +5,7 @@ import java.util.List;
 public abstract class Operation {
     private List<Integer> sequence;
     private int arraySize;
+    private int input;
 
     // Getters & Setters
     public void setSequence(List<Integer> sequence) { this.sequence = sequence; }
@@ -12,5 +13,7 @@ public abstract class Operation {
 
     public void setArraySize(int arraySize) { this.arraySize = arraySize; }
     public int getArraySize() { return arraySize; }
+
+    
 
 }
