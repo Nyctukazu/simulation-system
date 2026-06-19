@@ -2,9 +2,12 @@ package edu.dit.simulatorsystem.service;
 
 import java.lang.Math;
 
+import org.springframework.stereotype.Service;
+
 import edu.dit.simulatorsystem.service.utilities.MultiplyEngine;
 import edu.dit.simulatorsystem.service.utilities.FibonacciVerifiable;
 
+@Service
 public class FibonacciServiceImpl implements FibonacciVerifiable{
      
     private final MultiplyEngine multiply = new MultiplyEngine();

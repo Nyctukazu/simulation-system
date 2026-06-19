@@ -1,5 +1,5 @@
 package edu.dit.simulatorsystem.model.entities;
 
-public class FactorialModel {
+public class FactorialModel extends Operation {
     
 }

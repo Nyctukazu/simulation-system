@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.springframework.stereotype.Service;
+
 import edu.dit.simulatorsystem.dto.MovesResponse;
 import edu.dit.simulatorsystem.dto.SettingRequest;
 import edu.dit.simulatorsystem.model.entities.JackEnPoyModel;
@@ -11,6 +13,7 @@ import edu.dit.simulatorsystem.model.enums.MovesChoices;
 import edu.dit.simulatorsystem.model.enums.RoundResult;
 import edu.dit.simulatorsystem.service.utilities.JackEnPoyService;
 
+@Service
 public class JackEnPoyServiceImpl implements JackEnPoyService {
 
     private JackEnPoyModel currentGame;

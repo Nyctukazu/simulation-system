@@ -1,5 +1,10 @@
 package edu.dit.simulatorsystem.service;
 
-public class MultiplicationServiceImpl {
+import org.springframework.stereotype.Service;
+
+import edu.dit.simulatorsystem.service.utilities.MultiplicationService;
+
+@Service
+public class MultiplicationServiceImpl implements MultiplicationService {
     
 }

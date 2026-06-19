@@ -1,5 +1,5 @@
 package edu.dit.simulatorsystem.model.entities;
 
-public class MultiplicationModel {
+public class MultiplicationModel extends Operation {
     
 }
