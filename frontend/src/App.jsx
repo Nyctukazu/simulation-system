@@ -9,6 +9,7 @@ import JackEnPoy from './pages/JackEnPoy';
 import Multiplication from './pages/Multiplication';
 import FactorialCalculator from './pages/FactorialCalculator';
 import PasswordValidation from './pages/PasswordValidation';
+import LittleBlobsApp from './pages/LittleBlobsApp';
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <nav style={{ padding: '20px 40px', background: '#222', color: 'white', display: 'flex', gap: '20px' }}>
         <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}>🎮 User Dashboard</Link>
         <Link to="/admin/add-game" style={{ color: '#ffc107', textDecoration: 'none', fontWeight: 'bold' }}>🔒 Admin Portal</Link>
+        <Link to="/little-blobs-app" style={{ color: '#ffc107', textDecoration: 'none', fontWeight: 'bold' }}>🎮 Little Blobs App</Link>
       </nav>
 
       <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto' }}>
@@ -32,6 +34,7 @@ function App() {
           <Route path="/simulator/factorial" element={<FactorialCalculator />} />
           <Route path="/simulator/multiplication" element={<Multiplication />} />
           <Route path="/simulator/password-validation" element={<PasswordValidation />} />
+          <Route path="/little-blobs-app" element={<LittleBlobsApp />} />
         </Routes>
       </div>
     </Router>

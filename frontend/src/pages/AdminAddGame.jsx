@@ -21,15 +21,6 @@ function AdminAddGame() {
             return;
         }
 
-        axios.post('http://localhost:8080/api/games', formData)
-            .then(() => {
-                navigate('/');
-            })
-            .catch(err => {
-                console.error("Error saving game", err);
-                const backendMessage = err.response?.data?.message || "Failed to save the game.";
-                setSubmitError(backendMessage);
-            });
     };
 
     return (

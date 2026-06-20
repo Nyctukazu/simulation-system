@@ -17,7 +17,14 @@ public class AuthServiceImpl implements AuthService{
 
     @Override
     public boolean passValidation(String password) {
-        return password != null && password.length() >= 8;
+
+        if (password != null && password.length() >= 8 && password.length() <= 15 && !password.contains(" ")) {
+            String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?]).+$";
+
+            return password.matches(regex);
+        }
+        return false;
+        
     }
 
     @Override 
